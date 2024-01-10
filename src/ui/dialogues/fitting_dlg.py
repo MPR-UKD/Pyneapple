@@ -6,7 +6,7 @@ from typing import Callable
 
 from PyQt6.QtWidgets import QGridLayout
 
-from src.fit.parameters import Parameters, NNLSregParams, MultiExpParams
+from src.fit.parameters import Parameters, NNLSregParams, IVIMParams
 from src.exceptions import ClassMismatch
 from src.appdata import AppData
 
@@ -263,8 +263,8 @@ class BottomLayout(QtWidgets.QHBoxLayout):
                     self.parent.fit_dict = FittingDictionaries.get_nnls_dict(
                         self.parent.fit_params
                     )
-                elif isinstance(self.parent.fit_params, MultiExpParams):
-                    self.parent.fit_dict = FittingDictionaries.get_multi_exp_dict(
+                elif isinstance(self.parent.fit_params, IVIMParams):
+                    self.parent.fit_dict = FittingDictionaries.get_IVIM_dict(
                         self.parent.fit_params
                     )
                 # TODO: UI is not refreshing properly
@@ -319,7 +319,7 @@ class FittingDlg(QtWidgets.QDialog):
         self,
         name: str,
         fitting_dict: dict | None = None,
-        fit_params: MultiExpParams | NNLSregParams | None = None,
+        fit_params: IVIMParams | NNLSregParams | None = None,
         app_data: AppData | None = None,
     ) -> None:
         """Main witting DLG window."""
@@ -338,7 +338,7 @@ class FittingDlg(QtWidgets.QDialog):
         self.setWindowIcon(
             QtGui.QIcon(
                 Path(
-                    Path(__file__).parent.parent.parent,
+                    Path(__file__).parent.parent.parent.parent,
                     "resources",
                     "images",
                     "PyneappleLogo.ico",
@@ -380,7 +380,7 @@ class FittingDlg(QtWidgets.QDialog):
         self.remove_widgets(self.main_grid)
         # Recreate fit-dict
         self.fit_params.n_components = model
-        self.fit_dict = FittingDictionaries.get_multi_exp_dict(self.fit_params)
+        self.fit_dict = FittingDictionaries.get_IVIM_dict(self.fit_params)
         # Load Dict
         self.load_widgets_from_dict()
 
@@ -422,14 +422,14 @@ class FittingDictionaries(object):
 
     Methods:
     ----------
-    get_multi_exp_dict(fit_params: MultiExpParams):
+    get_multi_exp_dict(fit_params: IVIMParams):
         Multi-exponential fitting parameters.
     get_nnls_dict(fit_params: NNLSregParams):
         NNLS fitting parameters.
     """
 
     @staticmethod
-    def get_multi_exp_dict(fit_params: MultiExpParams):
+    def get_IVIM_dict(fit_params: IVIMParams):
         models = ["MonoExp", "BiExp", "TriExp"]
         fit_dict = {
             "n_components": FittingWidgets.ComboBox(
