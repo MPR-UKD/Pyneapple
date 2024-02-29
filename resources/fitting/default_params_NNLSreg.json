@@ -19,7 +19,7 @@
     750
   ],
   "fit_area": "Pixel",
-  "max_iter": 200,
+  "max_iter": 600,
   "mu": 0.02,
   "n_pools": 4,
   "reg_order": 0,
