@@ -1,0 +1,18 @@
+name: Sync fork weekly
+on:
+  schedule:
+    - cron: '0 9 * * 1'  # Monday 9 AM UTC
+  workflow_dispatch:     # Manual trigger option
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: tgymnich/fork-sync@v2
+        with:
+          upstream_repo: darksim33/Pyneapple
+          target_branch: main
+          source_branch: main
