@@ -11,8 +11,10 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - uses: tgymnich/fork-sync@v2
-        with:
-          upstream_repo: darksim33/Pyneapple
-          target_branch: main
-          source_branch: main
+      - name: Sync fork with upstream
+        run: |
+          git remote add upstream https://github.com/darksim33/Pyneapple.git
+          git fetch upstream
+          git checkout main
+          git merge upstream/main --no-edit
+          git push origin main
