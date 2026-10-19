@@ -406,6 +406,10 @@ class TestConstrainedCurveFitSolverMultiThread:
     @pytest.mark.unit
     def test_multi_threaded_matches_sequential(self, b_values):
         """Multi-threaded results match sequential results."""
+        # A loose tolerance stops SLSQP early on this flat objective, where the
+        # stopping point depends on BLAS thread count (joblib workers differ
+        # from the main process). Converge tightly so both modes agree.
+        tol = 1e-14
         model = TriExpModel(fit_reduced=True)
         param_sets = [
             (0.2, 0.01, 0.3, 0.003, 0.0005),
@@ -426,7 +430,7 @@ class TestConstrainedCurveFitSolverMultiThread:
         solver_seq = ConstrainedCurveFitSolver(
             model=model,
             max_iter=500,
-            tol=1e-10,
+            tol=tol,
             p0=p0,
             bounds=bounds,
             fraction_constraint=True,
@@ -438,7 +442,7 @@ class TestConstrainedCurveFitSolverMultiThread:
         solver_mt = ConstrainedCurveFitSolver(
             model=TriExpModel(fit_reduced=True),
             max_iter=500,
-            tol=1e-10,
+            tol=tol,
             p0=p0,
             bounds=bounds,
             fraction_constraint=True,
