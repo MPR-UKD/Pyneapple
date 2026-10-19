@@ -121,7 +121,7 @@
 
 ### Added
 
-- HDF5 data storage and export (3D/4D support, dict import, `sparse` library for N-D arrays) ([#198](https://github.com/darksim33/Pyneapple/pull/198), [#199](https://github.com/darksim33/Pyneapple/pull/199))
+- HDF5 data storage and export (3D/4D support, dict import, `sparse` library for N-D arrays) (#198, #199)
 - NIfTI helper functions and refactored results saving for NIfTI format
 - Dedicated IO module consolidating JSON, TOML, NIfTI, and HDF5 operations
 - `fit_opt` parameter to track fitting type (pixelwise / segmentation / segmented / ideal)
@@ -131,7 +131,7 @@
 ### Changed
 
 - Switched from `scipy.sparse` to `sparse` library for N-D array support
-- GPU fitter model retrieval and constraint handling improved ([#197](https://github.com/darksim33/Pyneapple/pull/197))
+- GPU fitter model retrieval and constraint handling improved (#197)
 - `DataExport` documentation expanded
 
 ### Fixed
@@ -148,7 +148,7 @@
 
 ### Added
 
-- `fit_t1_steam` option for T1 STEAM correction ([#193](https://github.com/darksim33/Pyneapple/pull/193))
+- `fit_t1_steam` option for T1 STEAM correction (#193)
 - Example TOML files for BiExp IVIM and NNLS fitting
 - Fit example scripts and extended example descriptions
 - T1 fit check during results export
@@ -172,7 +172,7 @@
 
 ### Added
 
-- TOML parameter file import and export ([#168](https://github.com/darksim33/Pyneapple/pull/168))
+- TOML parameter file import and export (#168)
 - TOML test suite and import examples
 - TOML documentation
 - Dependencies: `tomli`, `tomli-w`, `tomlkit`
@@ -188,12 +188,12 @@
 
 ### Added
 
-- Custom loguru-based logger ([#167](https://github.com/darksim33/Pyneapple/pull/167))
+- Custom loguru-based logger (#167)
 - Configurable log levels; file output support
 - Logger tests; log level set to `ERROR` for pytest runs
 - Linux GPUFit library (Ubuntu 22.04 LTS)
-- Model class restructuring: base fit model classes, explicit mono/bi/tri-exponential models, GPU model constructor ([#171](https://github.com/darksim33/Pyneapple/pull/171))
-- Dynamic dict-based parameter handling replacing static file loading ([#184](https://github.com/darksim33/Pyneapple/pull/184))
+- Model class restructuring: base fit model classes, explicit mono/bi/tri-exponential models, GPU model constructor (#171)
+- Dynamic dict-based parameter handling replacing static file loading (#184)
 
 ### Changed
 
@@ -220,7 +220,7 @@
 - Full GPUfit integration for CUDA GPU fitting
 - Explicit mono-, bi-, and tri-exponential models (replaces multi-exponential wrapper)
 - New result classes for structured IVIM and NNLS output
-- Individual pixel-by-pixel boundary support (`btype`) ([#197](https://github.com/darksim33/Pyneapple/pull/197))
+- Individual pixel-by-pixel boundary support (`btype`) (#197)
 - pytest-mock and pytest-cov; fitting, boundary, and GPU fitter test suites
 - Python 3.13 support
 
@@ -268,7 +268,7 @@
 
 ### Changed
 
-- IDEAL fitting moved to a separate branch; IDEAL files removed from `main` until stable ([#156](https://github.com/darksim33/Pyneapple/issues/156))
+- IDEAL fitting moved to a separate branch; IDEAL files removed from `main` until stable (#156)
 
 ---
 
@@ -281,7 +281,7 @@
 
 ### Changed
 
-- Fitting models reworked to share a unified interface across CPU and GPU backends ([#158](https://github.com/darksim33/Pyneapple/pull/158))
+- Fitting models reworked to share a unified interface across CPU and GPU backends (#158)
 
 ---
 
@@ -289,7 +289,7 @@
 
 ### Added
 
-- GPU fitting via `pygpufit` for CUDA-capable GPUs ([#150](https://github.com/darksim33/Pyneapple/pull/150))
+- GPU fitting via `pygpufit` for CUDA-capable GPUs (#150)
 
 ---
 
@@ -297,12 +297,12 @@
 
 ### Added
 
-- `RadImgArray` implementation for image array handling ([#145](https://github.com/darksim33/Pyneapple/pull/145))
+- `RadImgArray` implementation for image array handling (#145)
 
 ### Changed
 
-- Reconstruction split into UI and fitting layers ([#141](https://github.com/darksim33/Pyneapple/pull/141))
-- Results classes reworked ([#146](https://github.com/darksim33/Pyneapple/pull/146))
+- Reconstruction split into UI and fitting layers (#141)
+- Results classes reworked (#146)
 
 ### Removed
 
@@ -314,18 +314,18 @@
 
 ### Added
 
-- Load b-values option via context menu ([#131](https://github.com/darksim33/Pyneapple/pull/131))
-- IVIM fixed parameters support ([#136](https://github.com/darksim33/Pyneapple/pull/136))
-- Python 3.9 support ([#138](https://github.com/darksim33/Pyneapple/pull/138))
+- Load b-values option via context menu (#131)
+- IVIM fixed parameters support (#136)
+- Python 3.9 support (#138)
 
 ### Changed
 
-- Fit results converted to custom dict types ([#121](https://github.com/darksim33/Pyneapple/pull/121))
-- `fit_data` restructured for clarity ([#133](https://github.com/darksim33/Pyneapple/pull/133))
+- Fit results converted to custom dict types (#121)
+- `fit_data` restructured for clarity (#133)
 
 ### Fixed
 
-- Save results bug ([#127](https://github.com/darksim33/Pyneapple/pull/127))
+- Save results bug (#127)
 
 ---
 
@@ -352,16 +352,16 @@ First public release.
 ### Added
 
 - New package structure with icons and cleaned directory layout
-- NNLS and NNLS-regularised parameter unification ([#88](https://github.com/darksim33/Pyneapple/pull/88))
-- File dialog memory (`last_dir` property) ([#96](https://github.com/darksim33/Pyneapple/pull/96))
+- NNLS and NNLS-regularised parameter unification (#88)
+- File dialog memory (`last_dir` property) (#96)
 
 ### Fixed
 
-- `reg = 0` fitting edge case ([#59](https://github.com/darksim33/Pyneapple/pull/59))
-- Fit area selection ([#64](https://github.com/darksim33/Pyneapple/pull/64))
-- Zero-padding ([#89](https://github.com/darksim33/Pyneapple/pull/89))
-- IDEAL fitting fixes ([#85](https://github.com/darksim33/Pyneapple/pull/85))
-- Various UI and import cleanup ([#67](https://github.com/darksim33/Pyneapple/pull/67), [#97](https://github.com/darksim33/Pyneapple/pull/97))
+- `reg = 0` fitting edge case (#59)
+- Fit area selection (#64)
+- Zero-padding (#89)
+- IDEAL fitting fixes (#85)
+- Various UI and import cleanup (#67, #97)
 
 ---
 
