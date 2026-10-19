@@ -28,7 +28,7 @@ uv pip install pyneapple
 For development, clone the repository and install with the dev extras:
 
 ```bash
-git clone https://github.com/darksim33/Pyneapple.git
+git clone https://github.com/MPR-UKD/Pyneapple.git
 cd Pyneapple
 uv sync --all-groups
 ```
