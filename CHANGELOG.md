@@ -8,6 +8,25 @@
 
 ---
 
+## [v2.0.1] — 2026-10-19
+
+### Added
+
+- `uv.lock` committed for reproducible installs; CI now installs with `uv sync --locked`
+- Dependabot configuration for `github-actions` and `uv` (version-update pull requests currently paused via `open-pull-requests-limit: 0`)
+
+### Changed
+
+- Repository moved to the `MPR-UKD` organization; README, `pyproject.toml` project URLs and the GPU plugin documentation now point to the new locations
+- CHANGELOG pull-request references simplified to plain numbers, since links to the previous repository no longer resolve
+- CI workflow hardened: top-level `permissions: contents: read` and all actions pinned to commit SHAs
+
+### Fixed
+
+- `test_multi_threaded_matches_sequential` no longer fails on Linux with Python ≥ 3.11 (SciPy 1.17): the comparison now converges with `tol=1e-14`, because a loose tolerance stopped SLSQP at a BLAS-thread-dependent point
+
+---
+
 ## [v2.0.0] — 2026-05-13
 
 ### Added
