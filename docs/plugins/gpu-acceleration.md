@@ -1,6 +1,6 @@
 # GPU Acceleration
 
-> **TL;DR** — Pyneapple supports GPU-accelerated curve fitting through the optional [pyneapple-gpufit](https://github.com/darksim33/pyneapple-gpufit) plugin. Install it to replace the CPU solver with a batched CUDA implementation powered by [Gpufit](https://github.com/darksim33/GPUfit).
+> **TL;DR** — Pyneapple supports GPU-accelerated curve fitting through the optional [pyneapple-gpufit](https://github.com/MPR-UKD/pyneapple-gpufit) plugin. Install it to replace the CPU solver with a batched CUDA implementation powered by [Gpufit](https://github.com/darksim33/GPUfit).
 
 ---
 
@@ -12,10 +12,10 @@ By default, Pyneapple fits diffusion MRI models on the CPU using SciPy's `curve_
 
 ```bash
 # pip
-pip install git+https://github.com/darksim33/pyneapple-gpufit.git
+pip install git+https://github.com/MPR-UKD/pyneapple-gpufit.git
 
 # uv
-uv add git+https://github.com/darksim33/pyneapple-gpufit
+uv add git+https://github.com/MPR-UKD/pyneapple-gpufit
 ```
 
 **Requirements:** Python ≥ 3.12, an NVIDIA GPU, and a CUDA-compatible driver. The native library is bundled — no CUDA toolkit installation is needed.
@@ -72,4 +72,4 @@ If you use GPU-accelerated fitting in published work, cite the Gpufit paper:
 
 ## Further reading
 
-- [pyneapple-gpufit repository](https://github.com/darksim33/pyneapple-gpufit) — source, issue tracker, and full API reference
+- [pyneapple-gpufit repository](https://github.com/MPR-UKD/pyneapple-gpufit) — source, issue tracker, and full API reference
