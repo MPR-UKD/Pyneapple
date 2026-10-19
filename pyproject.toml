@@ -55,7 +55,7 @@ Repository = "https://github.com/darksim33/Pyneapple/"
 [dependency-groups]
 test = [
     "pytest>=8.1.1",
-    "pytest-order>=1.2.1",
+    "pytest-order>=1.5.0",
     "pytest-mock>=3.14.1",
     "pytest-cov>=6.2.1",
 ]
